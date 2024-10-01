@@ -1,0 +1,88 @@
+body {
+    background-color: #f8f9fa;
+}
+.product-images img {
+    width: 100%;
+    height: auto;
+    cursor: pointer; /* Change cursor to pointer for clickable images */
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+.product-images img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+.thumbnail-container {
+    max-height: 500px; /* Set a fixed height for the scrollable container */
+    overflow-y: auto;  /* Enable vertical scrolling */
+    border: 1px solid #ddd; /* Optional: add a border for visual separation */
+    padding: 10px; /* Optional: add padding for better appearance */
+    width: 800px; /* Fixed width for the thumbnails */
+}
+.thumbnail-container img {
+    width: 80px; /* Smaller width for the thumbnail images */
+    height: auto;
+    cursor: pointer;
+}
+.main-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+.main-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    cursor: pointer; /* Make the main image clickable */
+}
+.hero-section {
+    background-color: #333;
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+.product-display {
+    display: flex;
+    gap: 1rem;
+}
+
+.product-card {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 600px; /* Make the card a square */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white; /* White text for product name */
+    border: none;
+    transition: transform 0.3s ease; /* Optional: add a hover effect */
+}
+
+.product-card h5.card-title {
+    position: absolute;
+    z-index: 2; /* Ensure it stays on top */
+    font-size: 2rem;
+    /* background-color: rgba(0, 0, 0, 0.6); Darken background behind the text */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.product-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Add a dark overlay for better text readability */
+}
+
+.product-card:hover {
+    transform: scale(1.01); /* Optional: zoom effect on hover */
+}
+
