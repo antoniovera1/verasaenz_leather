@@ -12,18 +12,36 @@ body {
 .product-images img:hover {
     transform: scale(1.05); /* Slight zoom effect on hover */
 }
-.thumbnail-container {
+
+.thumbnail-image-container {
     max-height: 500px; /* Set a fixed height for the scrollable container */
     overflow-y: auto;  /* Enable vertical scrolling */
-    border: 1px solid #ddd; /* Optional: add a border for visual separation */
-    padding: 10px; /* Optional: add padding for better appearance */
-    width: 800px; /* Fixed width for the thumbnails */
+
+    /* For Firefox */
+    scrollbar-width: thin; /* Set scrollbar width to thin */
+    scrollbar-color: #888 #f1f1f1; /* Thumb and track colors */
 }
-.thumbnail-container img {
-    width: 80px; /* Smaller width for the thumbnail images */
-    height: auto;
-    cursor: pointer;
+
+/* Webkit browsers (Chrome, Safari) */
+.thumbnail-image-container::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+    height: 0; /* Set height to zero to hide scroll buttons */
 }
+
+.thumbnail-image-container::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Background of the scrollbar track */
+    border-radius: 10px; /* Rounded edges */
+}
+
+.thumbnail-image-container::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded edges for the thumb */
+}
+
+.thumbnail-image-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Darker color on hover */
+}
+
 .main-image {
     display: flex;
     justify-content: center;
