@@ -86,7 +86,7 @@ body {
 }
 
 .product-card h5.product-card-title {
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
     padding: 10px;
     border-radius: 5px;
     z-index: 2; /* Ensure text is on top */
