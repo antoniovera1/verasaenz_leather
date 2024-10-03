@@ -172,11 +172,13 @@
     <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen"> <!-- Modal fullscreen for large image -->
             <div class="modal-content">
-                <div class="modal-body p-0 position-relative"> <!-- Ensure position relative to anchor close button -->
+                <div class="modal-body p-0 position-relative" id="modalBody"> <!-- Added ID to modal body -->
                     <!-- Close button at top right corner -->
                     <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
                     <!-- Image content -->
-                    <img id="modalImage" src="" class="img-fluid w-100 h-100" style="object-fit: contain;" alt="Zoomed Image"> <!-- Ensure the image fits the screen properly -->
+                    <div class="image-container w-100 h-100">
+                        <img id="modalImage" src="" class="img-fluid w-100 h-100" style="object-fit: contain;" alt="Zoomed Image">
+                    </div>
                 </div>
             </div>
         </div>
@@ -215,6 +217,13 @@
             var modal = new bootstrap.Modal(document.getElementById('imageModal'));
             modal.show(); // Show the modal
         }
+
+        // Close modal when clicking outside the image
+        document.getElementById('modalBody').addEventListener('click', function (event) {
+            var modalImage = document.getElementById('modalImage');
+            var modal = bootstrap.Modal.getInstance(document.getElementById('imageModal'));
+            modal.hide();
+        });
     </script>
 </body>
 
