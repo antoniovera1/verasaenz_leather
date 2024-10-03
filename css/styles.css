@@ -77,7 +77,7 @@ body {
     color: white;
     border: none;
     transition: transform 0.3s ease;
-    transform: scale(1.02);
+    transform: scale(1.01);
 }
 
 .product-card::before {
