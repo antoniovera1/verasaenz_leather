@@ -315,6 +315,23 @@
 
     <script src="../../js/scripts.js"></script>
 
+    <script>
+
+
+        // Select the video element
+        var videoElement = document.getElementById('myVideo');
+
+        // Add event listeners for both click and touchstart events
+        videoElement.addEventListener('click', function() {
+            loadVideo(this);
+        });
+
+        videoElement.addEventListener('touchstart', function() {
+            loadVideo(this);
+        });
+
+    </script>
+
 </body>
 
 </html>
